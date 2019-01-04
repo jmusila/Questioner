@@ -122,6 +122,13 @@ input:read-only{
     outline: none;
     border: none;
 }
+.signup-login-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
 
 /* Constants */
 .container{
