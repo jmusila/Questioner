@@ -72,6 +72,74 @@ li a:hover{
     border-radius: 8px;
     text-align: center;
 }
+/* Form-Body */
+.login-signup-body{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    background-size: cover;
+}
+ /* Form */
+ .signup-form-wrapper{
+    border-radius: 8px;
+    width: 25em;
+    padding: 20px;
+    background-color: rgb(196, 78, 78);
+    border: solid 1px #D4D4D5;
+    opacity: 0.9;
+}
+.form-field{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.form-field a{
+    color: black;
+}
+
+.form-title{
+    border-bottom: solid 1px #D4D4D5;
+    padding: 10px;
+}
+
+.form-field > label {
+    color: #8D99A6;
+    font-weight: normal;
+}
+
+.form-header{
+    background-color: #fafbfc;
+    padding: .5em;
+    border-right: #d1d8dd 1px solid;
+    border-left: #d1d8dd 1px solid;
+    border-bottom: #d1d8dd 1px solid;
+    height: 50px;
+    width: 100%;
+}
+
+/* Input */
+input{
+    border: 1px solid #ced5db;
+    border-radius: 0.2em;
+    padding: 1em;
+}
+
+input:read-only{
+    background-color: #f5f7fa;
+    outline: none;
+    border: none;
+}
+
+.signup-login-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
 
 /* Constants */
 .container{
@@ -81,7 +149,16 @@ li a:hover{
     align-items: flex-start;
     flex-direction: column;
 }
-
+.primary{
+    background-color: #1a69a4;
+    color: white !important;
+}
+.fluid{
+    width: 100%;
+}
+.text.center{
+    text-align: center;
+}
 
 /*Buttons*/
 .button {
