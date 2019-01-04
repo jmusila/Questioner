@@ -72,6 +72,15 @@ li a:hover{
     border-radius: 8px;
     text-align: center;
 }
+/* Form-Body */
+.login-signup-body{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    background-size: cover;
+}
  /* Form */
  .signup-form-wrapper{
     border-radius: 8px;
@@ -110,6 +119,7 @@ li a:hover{
     height: 50px;
     width: 100%;
 }
+
 /* Input */
 input{
     border: 1px solid #ced5db;
@@ -122,6 +132,7 @@ input:read-only{
     outline: none;
     border: none;
 }
+
 .signup-login-flex{
     display: flex;
     justify-content: center;
