@@ -81,6 +81,35 @@ li a:hover{
     border: solid 1px #D4D4D5;
     opacity: 0.9;
 }
+.form-field{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.form-field a{
+    color: black;
+}
+
+.form-title{
+    border-bottom: solid 1px #D4D4D5;
+    padding: 10px;
+}
+
+.form-field > label {
+    color: #8D99A6;
+    font-weight: normal;
+}
+
+.form-header{
+    background-color: #fafbfc;
+    padding: .5em;
+    border-right: #d1d8dd 1px solid;
+    border-left: #d1d8dd 1px solid;
+    border-bottom: #d1d8dd 1px solid;
+    height: 50px;
+    width: 100%;
+}
 
 /* Constants */
 .container{
