@@ -26,7 +26,30 @@ li a:hover{
     border-radius: 8px;
     background-color: rgb(196, 78, 78);
 }
+/* Header */
+.nav-bar{
+    margin-left: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: left;
+    background-color: #ffff;
+    border-bottom: 1px solid #ebeff2;
+}
+.site-title{
+    width: 100%;
+    border-radius: 1rem;
+}
 
+.site-title a{
+    align-content: left;
+    color: #936c6c;
+}
+
+.links{
+    justify-content: right;
+    align-items: right;
+}
 
 /* Footer */
 .footer-bar{
