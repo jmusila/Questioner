@@ -81,7 +81,16 @@ li a:hover{
     align-items: flex-start;
     flex-direction: column;
 }
-
+.primary{
+    background-color: #1a69a4;
+    color: white !important;
+}
+.fluid{
+    width: 100%;
+}
+.text.center{
+    text-align: center;
+}
 
 /*Buttons*/
 .button {
