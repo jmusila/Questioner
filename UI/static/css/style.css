@@ -6,3 +6,10 @@ body{
     padding: 0%;
     margin: 0%;
 }
+
+/* Responsive */
+@media only screen and (max-width: 767px){
+    .column {
+        width: 100% !important;
+    }
+}
