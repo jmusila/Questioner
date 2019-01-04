@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    font-family: "Oxygen", "Ubuntu", "Roboto";
+    padding: 0%;
+    margin: 0%;
+}
+li{
+    float: left;
+}
+
+a{
+    text-decoration: none;
+    padding: 8px;
+    color: black;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 2rem;
+    overflow: hidden; 
+}
+
+li a:hover{
+    border-radius: 8px;
+    background-color: rgb(196, 78, 78);
+}
+/* Header */
+.nav-bar{
+    margin-left: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: left;
+    background-color: #ffff;
+    border-bottom: 1px solid #ebeff2;
+}
+.site-title{
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.site-title a{
+    align-content: left;
+    color: #936c6c;
+}
+
+.links{
+    justify-content: right;
+    align-items: right;
+}
+/* Body */
+.home-body{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    background-image: url(../images/quest.jpg);
+    background-size: cover;
+}
+
+.body-container{
+    position: absolute; 
+    top: 9em; 
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5); 
+    width: 50%;
+    color: #ffff; 
+    padding: 20px; 
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Constants */
+.container{
+    width: 75%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+/*Buttons*/
+.button {
+    border-radius: 8px;
+    background-color:  brown;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0px;
+    height: 3rem;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 1.5rem;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
+/* Footer */
+.footer-bar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-top: 1px solid #ebeff2;
+    padding: 1em;
+}
+/* Responsive */
+@media only screen and (max-width: 767px){
+    .column {
+        width: 100% !important;
+    }
+}
