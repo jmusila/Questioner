@@ -6,6 +6,26 @@ body{
     padding: 0%;
     margin: 0%;
 }
+li{
+    float: left;
+}
+
+a{
+    text-decoration: none;
+    padding: 8px;
+    color: black;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 2rem;
+    overflow: hidden; 
+}
+
+li a:hover{
+    border-radius: 8px;
+    background-color: rgb(196, 78, 78);
+}
 
 
 /* Footer */
