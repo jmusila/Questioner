@@ -73,6 +73,15 @@ li a:hover{
     text-align: center;
 }
 
+/* Constants */
+.container{
+    width: 75%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
 /* Footer */
 .footer-bar{
     display: flex;
