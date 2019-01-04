@@ -50,6 +50,28 @@ li a:hover{
     justify-content: right;
     align-items: right;
 }
+/* Body */
+.home-body{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    background-image: url(../images/quest.jpg);
+    background-size: cover;
+}
+
+.body-container{
+    position: absolute; 
+    top: 9em; 
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5); 
+    width: 50%;
+    color: #ffff; 
+    padding: 20px; 
+    border-radius: 8px;
+    text-align: center;
+}
 
 /* Footer */
 .footer-bar{
