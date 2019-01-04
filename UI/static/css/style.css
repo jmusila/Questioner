@@ -110,6 +110,18 @@ li a:hover{
     height: 50px;
     width: 100%;
 }
+/* Input */
+input{
+    border: 1px solid #ced5db;
+    border-radius: 0.2em;
+    padding: 1em;
+}
+
+input:read-only{
+    background-color: #f5f7fa;
+    outline: none;
+    border: none;
+}
 
 /* Constants */
 .container{
