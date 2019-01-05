@@ -144,6 +144,15 @@ input:read-only{
 .position{
     text-align: center;
 }
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 20px;
+    height: 85vh;
+    text-align: justify;
+    background-color: #f5f7fa;
+    font-family: roboto;
+}
 
 /* Constants */
 .container{
