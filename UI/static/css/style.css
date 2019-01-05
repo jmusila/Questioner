@@ -249,6 +249,7 @@ input:read-only{
     display: table;
     clear: both;
   }
+  
 .upvote {
     display: inline-block;
     border: 0.36em solid rgba(255, 255, 255, 0);
