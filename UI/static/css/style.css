@@ -153,6 +153,11 @@ input:read-only{
     background-color: #f5f7fa;
     font-family: roboto;
 }
+.meetup:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
 /* Constants */
 .container{
