@@ -26,6 +26,11 @@ li a:hover{
     border-radius: 8px;
     background-color: rgb(196, 78, 78);
 }
+img{
+    border-radius: 25px;
+    height: 200px;
+    width: 400px;
+}
 /* Header */
 .nav-bar{
     margin-left: 2rem;
