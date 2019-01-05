@@ -244,6 +244,11 @@ input:read-only{
   .right {
     width: 60%;
   }
+  .question-column:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   
 /* Footer */
 .footer-bar{
