@@ -140,6 +140,24 @@ input:read-only{
     width: 100%;
     height: 100%;
 }
+/*Meetups*/
+.position{
+    text-align: center;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 20px;
+    height: 85vh;
+    text-align: justify;
+    background-color: #f5f7fa;
+    font-family: roboto;
+}
+.meetup:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
 /* Constants */
 .container{
