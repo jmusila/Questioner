@@ -222,6 +222,33 @@ input:read-only{
     opacity: 1;
     right: 0;
   }
+/* Questions */
+#textarea {
+    width: 60%;
+    box-sizing: border-box;
+    padding: 5px;
+    column-count: auto;
+    font-size: 15px;
+}
+.qsn {
+    float: left;
+    padding: 10px;
+    height: 88vh;
+    background-color: #f5f7fa;  
+  }
+  
+  .left {
+    width: 40%;
+  }
+  
+  .right {
+    width: 60%;
+  }
+  .question-column:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   
 /* Footer */
 .footer-bar{
