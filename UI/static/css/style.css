@@ -222,6 +222,14 @@ input:read-only{
     opacity: 1;
     right: 0;
   }
+/* Questions */
+#textarea {
+    width: 60%;
+    box-sizing: border-box;
+    padding: 5px;
+    column-count: auto;
+    font-size: 15px;
+}
   
 /* Footer */
 .footer-bar{
