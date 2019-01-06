@@ -146,7 +146,7 @@ input:read-only{
     height: 100%;
 }
 /*Meetups*/
-.position{
+#position{
     text-align: center;
 }
 .column {
