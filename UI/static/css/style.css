@@ -146,7 +146,7 @@ input:read-only{
     height: 100%;
 }
 /*Meetups*/
-.position{
+#position{
     text-align: center;
 }
 .column {
@@ -181,6 +181,14 @@ input:read-only{
 }
 .text.center{
     text-align: center;
+}
+.brown{
+    background-color: brown;
+    color: white !important;
+    padding: 0.5em;
+    border-radius: 8px;
+    /* margin: 1em; */
+    /* float:right; */
 }
 
 /*Buttons*/
