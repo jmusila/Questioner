@@ -190,6 +190,9 @@ input:read-only{
 }
 
 /* Profile */
+.profile{
+    margin: 2em;
+}
 .avatar{
     height: 150px;
     width: 150px;
