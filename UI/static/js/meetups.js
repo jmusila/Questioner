@@ -1,4 +1,4 @@
- // get all available meetups
+ // display all available meetups
 
 function stashId(inid) {
     sessionStorage.setItem('meetupid', inid)
@@ -26,7 +26,7 @@ fetch(meetupsUrl, {
         if (data.status === 200) {
             // if request is successful
             let meetups = data.meetups; // Get the meetups
-            return data.data.forEach(function(meetup) { // Map through the results and for each run the code below
+            return data.data.forEach(function(meetup) { 
                 lst.innerHTML += `
                 <div class="column">
                 <p>${meetup.title}</p>
