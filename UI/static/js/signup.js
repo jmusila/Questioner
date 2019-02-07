@@ -1,7 +1,7 @@
-// Signup
+// Signup new user
 
 signup = () => {
-    let registrationUrl = 'http://127.0.0.1:5000/api/v2/auth/signup';
+    let registrationUrl = 'https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/auth/signup';
     let firstname = document.getElementById('firstname').value;
     let lastname = document.getElementById('lastname').value;
     let email = document.getElementById('email').value;
@@ -12,7 +12,7 @@ signup = () => {
 
     if (password !== confirmpassword) {
         let message = 'The passwords do not match'
-        document.getElementById('output').style.color = 'red'
+        document.getElementById('output').style.color = 'blue'
         document.getElementById('output').innerHTML = message
         return message
     }
@@ -35,12 +35,22 @@ signup = () => {
         })
         .then((res) => res.json())
         .then((data) => {
-            if (data.Status === 'Failed!') {
-                // if request is unsuccessful
-                document.getElementById('output').style.color = 'red'
+            if (data.Status === 409) {
+                // if conflicting
+                document.getElementById('output').style.color = 'blue'
                 document.getElementById('output').innerHTML = data.Message
             }
-            if (data.Status === "Success!") {
+            if (data.Status === 400) {
+                // if badrequest
+                document.getElementById('output').style.color = 'blue'
+                document.getElementById('output').innerHTML = data.Message
+            }
+            if (data.Status === 406) {
+                // if not acceptable
+                document.getElementById('output').style.color = 'blue'
+                document.getElementById('output').innerHTML = data.Message
+            }
+            if (data.Status === 201) {
                 // if request is successful
                 document.getElementById('output').style.color = 'green'
                 document.getElementById('output').innerHTML = data.Message
