@@ -29,26 +29,33 @@
                     <div class="container">
                         <div class="signup-login-flex">
                             <div class="signup-form-wrapper">
-                                <form id="signup" action="#" method="post">
+                                <form id="signup" onsubmit="event.preventDefault();">
                                     <div class="form-items">
                                         <h3 class="form-title fluid">Sign Up to Questioner</h3>
                                         <div class="form-field fluid">
-                                            <input type="text" name="first_name" required placeholder="First Name">
+                                            <input id="firstname" type="text" name="first_name" placeholder="First Name">
                                         </div>
                                         <div class="form-field fluid">
-                                            <input type="text" name="last_name" required placeholder="Last Name">
+                                            <input id="lastname" type="text" name="last_name" placeholder="Last Name">
                                         </div>
                                         <div class="form-field fluid">
-                                            <input type="email" name="email" required placeholder="Email Address">
+                                            <input id="email" type="text" name="email" placeholder="Email Address">
                                         </div>
                                         <div class="form-field fluid">
-                                            <input type="password" name="password" required placeholder="Password">
+                                            <input id="phoneNumber" type="phonenumber" name="phonenumber" placeholder="Phonenumber">
                                         </div>
                                         <div class="form-field fluid">
-                                            <input type="password" name="confirm_password" required placeholder="Confirm Password">
+                                            <input id="username" type="username" name="username" placeholder="Username">
                                         </div>
                                         <div class="form-field fluid">
-                                            <input class="fluid primary" type="submit" value="Sign Up">
+                                            <input id="password" type="password" name="password" placeholder="Password">
+                                        </div>
+                                        <div class="form-field fluid">
+                                            <input id="confirmpassword" type="password" name="confirm_password" required placeholder="Confirm Password">
+                                        </div>
+                                        <p id="output"></p>
+                                        <div class="form-field fluid">
+                                            <a onclick="signup()"><input class="fluid primary" type="submit" value="Sign Up"></a>
                                             <h4 class="text center">
                                                 <a href="login.html">Already a member? Sign in</a>
                                             </h4>
@@ -69,6 +76,6 @@
             </div>
         </div>
     </div>
-    <script src="static/js/main.js"></script>
+    <script src="static/js/signup.js"></script>
 </body>
 </html>
