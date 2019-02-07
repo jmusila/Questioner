@@ -129,7 +129,7 @@ img{
 input{
     border: 1px solid #ced5db;
     border-radius: 0.2em;
-    padding: 0.5em;
+    padding: 0.6em;
 }
 
 input:read-only{
