@@ -29,17 +29,18 @@
                     <div class="container">
                         <div class="signup-login-flex">
                             <div class="signup-form-wrapper">
-                                <form id="login" action="meetups.html">
+                                <form onsubmit="event.preventDefault();">
                                     <div class="form-items">
                                         <h3 class="form-title fluid">Log In to Questioner</h3>
                                         <div class="form-field fluid">
-                                            <input id="email" type="email" name="email" required placeholder="Email Address">
+                                            <input id="email" type = "email" name="email" placeholder="Email Address">
                                         </div>
                                         <div class="form-field fluid">
-                                            <input id="password" type="password" name="password" required placeholder="Password">
+                                            <input id="password" type = "password" name="password" placeholder="Password">
                                         </div>
+                                        <p id="output"></p>
                                         <div class="form-field fluid">
-                                            <input class="fluid primary" type="submit" value="Log In">
+                                            <a onclick="signin()"><input type="submit" class="fluid primary" value="Log In"></a>
                                             <h4 class="text center">
                                                 <a href="register.html">Not a member? Sign up</a><br/><br/>
                                                 <u><a href="#">Forgot Password?</a></u>
@@ -61,6 +62,6 @@
             </div>
         </div>
     </div>
-    <script src="static/js/login.js></script>
+    <script src="static/js/login.js"></script>
 </body>
 </html>
