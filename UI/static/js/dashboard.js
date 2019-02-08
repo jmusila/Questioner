@@ -35,7 +35,7 @@ fetch(meetupsUrl, {
                 <p><i>Location: </i>${meetup.location}</p>
                 <p><i>Time Posted: </i>${meetup.time_added}</p>
                 <p>Intrested? <a href="#"><b>Click here to schedule</b></a></p>
-                <button class="brown">Delete Meetup</button>
+                <button id="deleteOneMeetup" class="brown">Delete Meetup</button>
             </div>
                 `;
             })
@@ -43,3 +43,86 @@ fetch(meetupsUrl, {
         }
 
     })
+
+//Delete a meetup
+function deleteOneMeetup() {
+    let meetupId = sessionStorage.getItem('id');
+    let cartUrl = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/meetups/upcoming/${meetupId}`;
+    let token = window.localStorage.getItem('token');
+    fetch(cartUrl, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            }
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.status === 404) {
+                // if request is unsuccessful
+                document.getElementById('output').style.color = 'blue'
+                document.getElementById('output').innerHTML = data.message
+                return message
+            }
+            if (data.status === 200) {
+                // if request is successful
+                document.getElementById('output').style.color = 'green'
+                document.getElementById('output').innerHTML = data.message
+                return message
+            }
+
+        })
+}
+
+// Signup new user
+
+postMeetup = () => {
+    let meetupUrl = 'http://127.0.0.1:5000/api/v2/meetups/upcoming';
+    let location = document.getElementById('location').value;
+    let images = document.getElementById('images').value;
+    let title = document.getElementById('title').value;
+    let happeningOn = document.getElementById('happeningOn').value;
+    let tags = document.getElementById('tags').value;
+    let token = window.localStorage.getItem('token');
+
+    data = {
+        "location": location,
+        "images": images,
+        "title": title,
+        "happeningOn": happeningOn,
+        "tags":tags
+    }
+
+    fetch(meetupUrl, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            },
+            body: JSON.stringify(data)
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.status === 409) {
+                // if conflicting
+                document.getElementById('output').style.color = 'blue'
+                document.getElementById('output').innerHTML = data.sessage
+            }
+            if (data.status === 401) {
+                // if badrequest
+                document.getElementById('output').style.color = 'blue'
+                document.getElementById('output').innerHTML = data.message
+            }
+            if (data.status === 201) {
+                // if request is successful
+                document.getElementById('output').style.color = 'green'
+                document.getElementById('output').innerHTML = data.message
+                setTimeout(function() {
+                    window.location.assign("dashboard.html");
+                })
+            }
+
+        })
+
+}
