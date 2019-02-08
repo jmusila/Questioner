@@ -23,6 +23,10 @@ signin = () => {
                 // if request is successful
                 window.location.assign("meetups.html");
             }
+            if (email === "admin@super.com" && data.Status === 200) {
+                // if admin
+                window.location.assign("dashboard.html");
+            }
             window.localStorage.setItem('token', data.access_token);
         })
 }
