@@ -36,12 +36,15 @@
             <div id="myicon" class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
-                  <p><input class="Topic" type="topic" name="" placeholder="Enter meetup topic"></p>
-                  <p><input class="Location" type="location" name="" placeholder="Enter meetup location"></p>
-                  <p><input class="Date" type="date" name="" value=""></p>
-                  <input type="file" name="title" id="image" class="create-field" accept="image/*">
-                  <p><textarea id="textarea" form="comment" name="text" placeholder="Enter description"></textarea></p>
-                  <p><input class="submit" type="submit" name="" value="submit"></p>
+                  <form id="postMeetup" onsubmit="event.preventDefault();">
+                  <p><input id="title" class="Topic" type="topic" name="" placeholder="Enter meetup topic"></p>
+                  <input type="file" name="title" id="images" class="create-field" accept="image/*">
+                  <p><input id="happeningOn" class="Date" type="date" name="" value=""></p>
+                  <p><input id="location" class="Location" type="location" name="" placeholder="Enter meetup location"></p>
+                  <p><input id="tags" class="Location" type="tags" name="" placeholder="Add a tag of any person"></p>
+                  <p id="output"></p>
+                  <p><a onclick="postMeetup()"><input class="submit" type="submit" name="" value="submit"></a></p>
+                  </form>
                 </div>
               </div>
 <div class="footer-bar">
