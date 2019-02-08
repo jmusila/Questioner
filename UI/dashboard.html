@@ -31,15 +31,15 @@
             <h2 id="position">Dashboard</h2>
             <div class="meetup">
                 <p id="output"></p>
-                <div onClick="addMeetups();"id="meetups"></div>
+                <div onClick="deleteOneMeetup();"id="meetups"></div>
             </div>
             <div id="myicon" class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
-                  <p><input class="Topic" type="topic" name="" value="Topic.."></p>
-                  <p><input class="Location" type="location" name="" value="Location.."></p>
+                  <p><input class="Topic" type="topic" name="" placeholder="Enter meetup topic"></p>
+                  <p><input class="Location" type="location" name="" placeholder="Enter meetup location"></p>
                   <p><input class="Date" type="date" name="" value=""></p>
-                  <p><button>Add Image</button></p>
+                  <input type="file" name="title" id="image" class="create-field" accept="image/*">
                   <p><textarea id="textarea" form="comment" name="text" placeholder="Enter description"></textarea></p>
                   <p><input class="submit" type="submit" name="" value="submit"></p>
                 </div>
