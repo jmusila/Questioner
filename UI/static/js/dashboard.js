@@ -77,7 +77,7 @@ function deleteOneMeetup() {
 // Signup new user
 
 postMeetup = () => {
-    let meetupUrl = 'http://127.0.0.1:5000/api/v2/meetups/upcoming';
+    let meetupUrl = 'https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/meetups/upcoming';
     let location = document.getElementById('location').value;
     let images = document.getElementById('images').value;
     let title = document.getElementById('title').value;
