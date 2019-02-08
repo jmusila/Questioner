@@ -35,7 +35,7 @@ fetch(meetupsUrl, {
                 <p><i>Location: </i>${meetup.location}</p>
                 <p><i>Time Posted: </i>${meetup.time_added}</p>
                 <p>Intrested? <a href="#"><b>Click here to schedule</b></a></p>
-                <a href="questions.html"><button>View Questions</button></a>
+                <button class="brown">Delete Meetup</button>
             </div>
                 `;
             })
