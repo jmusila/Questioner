@@ -35,7 +35,7 @@ fetch(meetupsUrl, {
                 <p><i>Location: </i>${meetup.location}</p>
                 <p><i>Time Posted: </i>${meetup.time_added}</p>
                 <p>Intrested? <a href="#"><b>Click here to schedule</b></a></p>
-                <button id="deleteOneMeetup" class="brown">Delete Meetup</button>
+                <a onClick="stashId(${meetup.meetup_id}); deleteOneMeetup();"<button class="brown">Delete Meetup</button></a>
             </div>
                 `;
             })
@@ -46,7 +46,7 @@ fetch(meetupsUrl, {
 
 //Delete a meetup
 function deleteOneMeetup() {
-    let meetupId = sessionStorage.getItem('id');
+    let meetupId = sessionStorage.getItem('meetupid');
     let cartUrl = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/meetups/upcoming/${meetupId}`;
     let token = window.localStorage.getItem('token');
     fetch(cartUrl, {
@@ -66,10 +66,11 @@ function deleteOneMeetup() {
             }
             if (data.status === 200) {
                 // if request is successful
-                document.getElementById('output').style.color = 'green'
-                document.getElementById('output').innerHTML = data.message
-                return message
+                alert(data.message)
             }
+            setTimeout(function() {
+                window.location.assign("dashboard.html");
+            })
 
         })
 }
@@ -116,8 +117,7 @@ postMeetup = () => {
             }
             if (data.status === 201) {
                 // if request is successful
-                document.getElementById('output').style.color = 'green'
-                document.getElementById('output').innerHTML = data.message
+                alert(data.message)
                 setTimeout(function() {
                     window.location.assign("dashboard.html");
                 })
