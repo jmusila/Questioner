@@ -30,43 +30,21 @@
                 </div>
             <h2 id="position">Dashboard</h2>
             <div class="meetup">
-                <div class="column">
-                    <p>Bootcamp Meetup</p>
-                    <img src="static/images/meet.jpg"">
-                    <p><i>Date: </i>Monday 14th 2019, 3Pm</p>
-                    <p><i>Location: </i>PAC</p>
-                    <p>Lets meet and discuss how to make our bootcamps better and more effective</p>
-                    <p>Intrested? <a href="#"><b>Click here to schedule</b></a></p>
-                    <button class="brown">Delete Meetup</button>
-                </div>
-                <div class="column">
-                    <p>Bootcamp Meetup</p>
-                    <img src="static/images/meet.jpg">
-                    <p><i>Date: </i>Monday 14th 2019, 3Pm</p>
-                    <p><i>Location: </i>PAC</p>
-                    <p>Lets meet and discuss how to make our bootcamps better and more effective</p>
-                    <p>Intrested? <a href="#"><b>Click here to schedule</b></a></p>
-                    <button class="brown">Delete Meetup</button>
-                </div>
-                <div class="column">
-                    <p>Bootcamp Meetup</p>
-                    <img src="static/images/meet.jpg">
-                    <p><i>Date: </i>Monday 14th 2019, 3Pm</p>
-                    <p><i>Location: </i>PAC</p>
-                    <p>Lets meet and discuss how to make our bootcamps better and more effective</p>
-                    <p>Intrested? <a href="#"><b>Click here to schedule</b></a></p>
-                    <button class="brown">Delete Meetup</button>
-                </div>
+                <p id="output"></p>
+                <div id="meetups"></div>
             </div>
             <div id="myicon" class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
-                  <p><input class="Topic" type="topic" name="" value="Topic.."></p>
-                  <p><input class="Location" type="location" name="" value="Location.."></p>
-                  <p><input class="Date" type="date" name="" value=""></p>
-                  <p><button>Add Image</button></p>
-                  <p><textarea id="textarea" form="comment" name="text" placeholder="Enter description"></textarea></p>
-                  <p><input class="submit" type="submit" name="" value="submit"></p>
+                  <form id="postMeetup" onsubmit="event.preventDefault();">
+                  <p><input id="title" class="Topic" type="topic" name="" placeholder="Enter meetup topic"></p>
+                  <input type="file" name="title" id="images" class="create-field" accept="image/*">
+                  <p><input id="happeningOn" class="Date" type="date" name="" value=""></p>
+                  <p><input id="location" class="Location" type="location" name="" placeholder="Enter meetup location"></p>
+                  <p><input id="tags" class="Location" type="tags" name="" placeholder="Add a tag of any person"></p>
+                  <p id="output"></p>
+                  <p><a onclick="postMeetup()"><input class="submit" type="submit" name="" value="submit"></a></p>
+                  </form>
                 </div>
               </div>
 <div class="footer-bar">
@@ -78,6 +56,7 @@
         </div>
     </div>
 </div>
+<script src="static/js/dashboard.js"></script>
 <script src="static/js/main.js"></script>
 </body>
 </html>

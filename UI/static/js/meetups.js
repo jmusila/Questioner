@@ -30,7 +30,7 @@ fetch(meetupsUrl, {
                 lst.innerHTML += `
                 <div class="column">
                 <p>${meetup.title}</p>
-                <img src="static/images/${meetup.image}">
+                <img src="${meetup.image}">
                 <p><i>Date: </i>${meetup.happeningOn}</p>
                 <p><i>Location: </i>${meetup.location}</p>
                 <p><i>Time Posted: </i>${meetup.time_added}</p>
