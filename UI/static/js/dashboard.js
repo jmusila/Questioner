@@ -47,9 +47,9 @@ fetch(meetupsUrl, {
 //Delete a meetup
 function deleteOneMeetup() {
     let meetupId = sessionStorage.getItem('meetupid');
-    let cartUrl = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/meetups/upcoming/${meetupId}`;
+    let meetUrl = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/meetups/upcoming/${meetupId}`;
     let token = window.localStorage.getItem('token');
-    fetch(cartUrl, {
+    fetch(meetUrl, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json',
