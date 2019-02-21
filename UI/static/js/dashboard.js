@@ -30,12 +30,12 @@ fetch(meetupsUrl, {
                 lst.innerHTML += `
                 <div class="column">
                 <p>${meetup.title}</p>
-                <img src="static/images/${meetup.image}">
+                <img src="static/images/meet.jpg">
                 <p><i>Date: </i>${meetup.happeningOn}</p>
                 <p><i>Location: </i>${meetup.location}</p>
                 <p><i>Time Posted: </i>${meetup.time_added}</p>
                 <p>Intrested? <a href="#"><b>Click here to schedule</b></a></p>
-                <a onClick="stashId(${meetup.meetup_id}); deleteOneMeetup();"<button class="brown">Delete Meetup</button></a>
+                <button  onclick="stashId(${meetup.meetup_id}); deleteOneMeetup();"class="brown">Delete Meetup</button>
             </div>
                 `;
             })
@@ -68,9 +68,6 @@ function deleteOneMeetup() {
                 // if request is successful
                 alert(data.message)
             }
-            setTimeout(function() {
-                window.location.assign("dashboard.html");
-            })
 
         })
 }
