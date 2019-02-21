@@ -28,39 +28,49 @@
             <div class="qns-column">
                     <div class="question-content">
                         <div class="qsn left">
-                            <p id="output"></p>
-                            <div id="meetp"></div>
+                            <div class="column">
+                                <p id="title"></p>
+                                <img  src="../UI/static/images/meet.jpg">
+                                <p id="happeningOn"></p>
+                                <p id="location"></p>
+                                <p id="time_added"></p>
+                                </div>
                         </div>
                         <div class="qsn right">
-                                <h2>Questions 1</h2>
-                                <p id="solution">How can I finish challenge one within two days and meet all the minimum requirements?</p>
-                                <h4>Votes  3</h4> <h4>Comments  8</h4>
-                                <table>
-                                        <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="upvote">
-                                            <i class="fa fa-thumbs-up"></i></div>
-                                        </td>
-                                        <td>
-                                            <div class="downvote">
-                                            <i class="fa fa-thumbs-down"></i></div>
-                                        </td>
-                                        <td>
-                                        <div class="upvote">
-                                                <div id="icon">
-                                            <i class="fa fa-comment"></i>
-                                                    </div>
-                                                </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                            <h2 id="qsn_id"></h2>
+                            <p id="solution"></p>
+                            <p id="body"></p>
+                            <p id="by"></p>
+                            <h4 id="vote"></h4> 
+                            <p id="output"></p>
+                            <table>
+                                <tr>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="upvote">
+                                    <i id="Upvote" class="fa fa-thumbs-up"></i></div>
+                                </td>
+                                <td>
+                                    <div class="downvote">
+                                    <i id="votedown" class="fa fa-thumbs-down"></i></div>
+                                </td>
+                                <td>
+                                    <div class="upvote">
+                                        <div id="icon">
+                                    <i class="fa fa-comment"></i>
+                                            </div>
+                                        </div>
+        
+                                </td>
+                            </tr>
+                        </table>
                                 <hr>
                     <div class="question">
                 <h2>Enter Your Question</h2>
-                <textarea id="textarea" form="comment" name="text" placeholder="Enter your question"></textarea>
-            <p><input class="submit" type="submit" name="" value="submit"></p>
+                    <p><input id="title" placeholder="Enter title"></p>
+                    <textarea id="body" form="comment" name="text" placeholder="Enter your question"></textarea>
+                    <p><input id="post" class="submit" type="submit" name="" value="submit"></p>
         </div>
     </div>
 </div>
@@ -82,6 +92,8 @@
         </div>
     </div>
 <script src="static/js/main.js"></script>
-<script src="static/js/meetup.js></script>
+<script src="static/js/single_meetup.js"></script>
+<script src="static/js/meetups.js"></script>
+<script src="static/js/questions.js"></script>
 </body>
 </html>
