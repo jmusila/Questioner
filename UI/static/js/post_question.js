@@ -8,8 +8,8 @@ function postQuestion(e){
   console.log(id);
   let posturl = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/meetups/${id}/questions`;
   let token = window.localStorage.getItem('token');
-  let title = document.getElementById('title').value;
-  let body = document.getElementById('body').value;
+  let title = document.getElementById('name').value;
+  let body = document.getElementById('changer').value;
 
   data = {
     "title": title,
@@ -27,15 +27,12 @@ function postQuestion(e){
   .then((res) => res.json())
   .then((data ) => {
     if (data.Status === 201){
-      document.getElementById('output').style.color = 'blue'
-      document.getElementById('output').innerHTML = data.Message
-      return Message
+      alert(data.Message)
+      }
 
-    } else if (data.Status === 404){
-      document.getElementById('output').style.color = 'blue'
-      document.getElementById('output').innerHTML = data.Message
-      return Message
-    }
+    if (data.Status === 404){
+      alert(data.Message)
+      }
   })
 
 }
