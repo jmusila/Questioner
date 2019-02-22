@@ -1,4 +1,8 @@
 // Get top questions
+function stashId(inid) {
+  sessionStorage.setItem('questionid', inid)
+}
+
 fetchQuestions()
 
 function fetchQuestions(){
@@ -25,25 +29,69 @@ function fetchQuestions(){
   
       data.data.forEach(question => {
 
-        var idNode = document.getElementById('qsn_id')
-        idNode.innerHTML = `<i>Question</i> ${question.question_id}`
+        var topicNode = document.createElement('h2')
+        topicNode.id = 'qsn_id'
+        topicNode.innerHTML = `<i>Question</i> ${question.question_id}`
 
-        var idNode = document.getElementById('solution')
-        idNode.innerHTML = `<b>Title: </b> ${question.title}`
+        var titleNode = document.createElement('p')
+        titleNode.id = 'solution'
+        titleNode.innerHTML = `<b>Title</b> ${question.title}`
 
-        var idNode = document.getElementById('body')
-        idNode.innerHTML =  question.body
+        var bodyNode = document.createElement('p')
+        bodyNode.id = 'body'
+        bodyNode.innerHTML = `${question.body}`
 
-        var idNode = document.getElementById('vote')
-        idNode.innerHTML = `<i>Votes</i> ${question.votes}`
+        var voteNode = document.createElement('h4')
+        voteNode.id = 'vote'
+        voteNode.innerHTML = `<i>Votes</i> ${question.votes}`
+
 
         var anchorNode = document.createElement('a')
         anchorNode.id = question.question_id.toString()
         anchorNode.href = "../UI/comments.html?questionid=" + question.question_id
 
+        anchorNode.appendChild(topicNode)
+        anchorNode.appendChild(titleNode)
+        anchorNode.appendChild(bodyNode)
+        anchorNode.appendChild(voteNode)
+
+
+        questions.appendChild(anchorNode)
+
+        var commentNode = document.createElement('div')
+        commentNode.className = 'upvote'
+        var commNode = document.createElement('div')
+        commNode.id = 'upvote'
+
+        var iconNode = document.createElement('i')
+        iconNode.className = 'fa fa-comment'
+        questions.innerHTML += `
+        <table>
+          <tr>
+          </tr>
+            <tr>
+              <td>
+                <div class="upvote">
+                  <i onclick="stashId(${question.question_id}); upvote();" class="fa fa-thumbs-up"></i></div>
+              </td>
+              <td>
+
+              </td>
+              <td>
+              <div class="downvote">
+                <i onclick="stashId(${question.question_id}); downvote();" class="fa fa-thumbs-down"></i></div>
+              </div>
+            </td>
+          </tr>
+        </table>
+        `;
+
     })
     
-
+                // <div class="upvote">
+                //   <div id="icon">
+                //     <i class="fa fa-comment"></i>
+                // </div>
     questions.appendChild(questionNodes);
 
   } else if (data.Status === 404){
@@ -57,48 +105,10 @@ function fetchQuestions(){
 
 }
 
-// Post question
-document.getElementById('post').addEventListener('submit', postQuestion)
 
-function postQuestion(event){
-  event.preventDefault();
-
-  var id = location.search.split('meetupid=')[1];
-  console.log(id);
-  let url = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/meetups/5/questions`;
-  let token = window.localStorage.getItem('token');
-
-  fetch(url, {
-    method : 'POST',
-    body : JSON.stringify({
-      "title": document.getElementById('title').value,
-      "body": document.getElementById('body').value,
-    }),
-      headers : {
-        'Access-Control-Request-Headers': '*',
-        'Authorization': 'Bearer ' + token
-      }
-    })
-  .then((res) => res.json())
-  .then((data ) => {
-    if (data.Status === 201){
-      console.log(data);
-      window.location.href = "../UI/questions.html?meetupid=" + id;
-
-    } else if (data.Status === 404){
-      document.getElementById('output').style.color = 'blue'
-      document.getElementById('output').innerHTML = data.Message
-      return message
-    }
-  })
-
-}
-
-document.getElementById('Upvote').addEventListener('click', upvote)
 function upvote(){
-  var id = this.getAttribute('meetupid');
-
-  let url = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/meetups/questions/5/upvote`
+  let questionId = sessionStorage.getItem('questionid');
+  let url = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/meetups/questions/${questionId}/upvote`
 
   let token = window.localStorage.getItem('token');
     
@@ -126,11 +136,10 @@ function upvote(){
 }
 
 
-document.getElementById('votedown').addEventListener('click', downvote)
 function downvote(){
-  var id = this.getAttribute('meetupid');
 
-  let url = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/meetups/questions/5/downvote`
+  let questionId = sessionStorage.getItem('questionid');
+  let url = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/meetups/questions/${questionId}/downvote`
 
   let token = window.localStorage.getItem('token');
     
