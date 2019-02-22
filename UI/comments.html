@@ -26,18 +26,27 @@
                     </div>
             </div>
         <div class="qns-column">
-                        <div class="column">
+            <div class="question-content">
+                    <div class="qsn left">
                         <p id="quest"></p>
                         <p id="title"></p>
                         <p id="body"></p>
                         <p id="votes"></p>
                         <p id="username"></p>
+                        </div>
                 <div class="qsn right">
-
+                    <div id="output"></div>
+                    <div id="comment"></div>
+                    <div class="question">
+                            <h2>Enter Your comment</h2>
+                            <form onsubmit="event.preventDefault();">
+                                <p> <textarea id="comment" type = "comment" name="comment" placeholder="Enter Comment"></textarea></p>
+                                <a onclick="postComment()"><input id="post-comment" type="submit" name="" value="Submit"></a>
+                            </form>
+                    </div>
                 </div>
                 </div>
                 </div>
-        </div>
 <div class="footer-bar">
         <div class="container">
             <div class="site-copyright">
@@ -47,6 +56,6 @@
             </div>
         </div>
     </div>
-<script src="static/js/main.js"></script>
+<script src="static/js/comments.js"></script>
 <script src="static/js/question.js"></script>
 </html>

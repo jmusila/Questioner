@@ -256,8 +256,7 @@ input:read-only{
 }
 .qsn {
     float: left;
-    padding: 10px;
-    height: 88vh;
+    padding: 10px; 
     background-color: #f5f7fa;  
   }
   

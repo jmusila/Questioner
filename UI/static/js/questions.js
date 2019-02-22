@@ -45,6 +45,10 @@ function fetchQuestions(){
         voteNode.id = 'vote'
         voteNode.innerHTML = `<i>Votes</i> ${question.votes}`
 
+        var userNode = document.createElement('p')
+        userNode.id = 'user'
+        userNode.innerHTML = `<i>Posted By:</i> ${question.user_id}`
+
         var viewNode = document.createElement('p')
         viewNode.innerHTML = `<b>View Comments</b>`
 
@@ -57,6 +61,7 @@ function fetchQuestions(){
         anchorNode.appendChild(titleNode)
         anchorNode.appendChild(bodyNode)
         anchorNode.appendChild(voteNode)
+        anchorNode.appendChild(userNode)
         anchorNode.appendChild(viewNode)
 
 
@@ -91,17 +96,12 @@ function fetchQuestions(){
         `;
 
     })
-    
-                // <div class="upvote">
-                //   <div id="icon">
-                //     <i class="fa fa-comment"></i>
-                // </div>
     questions.appendChild(questionNodes);
 
   } else if (data.Status === 404){
     document.getElementById('output').style.color = 'blue'
     document.getElementById('output').innerHTML = data.Message
-    return message
+    return Message
 
   } 
 
@@ -125,17 +125,16 @@ function upvote(){
   })
   .then((res) => res.json())
   .then((data ) => {
-  if (data.Status === 201){
-      document.getElementById('output').style.color = 'blue'
-      document.getElementById('output').innerHTML = data.Message
-      return Message
-    }
+    if (data.Status === 201){
+      alert(data.Message)
+      }
 
   if (data.Status === 404){
-      document.getElementById('output').style.color = 'blue'
-      document.getElementById('output').innerHTML = data.Message
-      return Message
+    alert(data.Message)
     }
+    if (data.status === 401) {
+      alert(data.message)
+  }
   })
 }
 
@@ -157,15 +156,14 @@ function downvote(){
   .then((res) => res.json())
   .then((data ) => {
     if (data.Status === 201){
-      document.getElementById('output').style.color = 'blue'
-      document.getElementById('output').innerHTML = data.Message
-      return Message
-    }
+      alert(data.Message)
+      }
 
-  if (data.Status === 404){
-      document.getElementById('output').style.color = 'blue'
-      document.getElementById('output').innerHTML = data.Message
-      return Message
-    }
+      if (data.Status === 404){
+        alert(data.Message)
+        }
+    if (data.Status === 401) {
+      alert(data.Message)
+  }
   })
 }
