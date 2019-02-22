@@ -45,15 +45,19 @@ function fetchQuestions(){
         voteNode.id = 'vote'
         voteNode.innerHTML = `<i>Votes</i> ${question.votes}`
 
+        var viewNode = document.createElement('p')
+        viewNode.innerHTML = `<b>View Comments</b>`
+
 
         var anchorNode = document.createElement('a')
         anchorNode.id = question.question_id.toString()
-        anchorNode.href = "../UI/comments.html?questionid=" + question.question_id
+        anchorNode.href = `../UI/comments.html?meetupid=${id}/questionid=${question.question_id}`;
 
         anchorNode.appendChild(topicNode)
         anchorNode.appendChild(titleNode)
         anchorNode.appendChild(bodyNode)
         anchorNode.appendChild(voteNode)
+        anchorNode.appendChild(viewNode)
 
 
         questions.appendChild(anchorNode)

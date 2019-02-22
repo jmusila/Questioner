@@ -1,5 +1,5 @@
 // Post question
-document.getElementById('post').addEventListener('click', postQuestion)
+document.getElementById('post-question').addEventListener('click', postQuestion)
 
 function postQuestion(e){
     e.preventDefault();
