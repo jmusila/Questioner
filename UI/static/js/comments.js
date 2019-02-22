@@ -42,7 +42,7 @@
 // Post comment
 postComment = () => {
     var id = location.search.split('questionid=')[1];
-    let comment = document.getElementById('comment').value;
+    let comment = document.getElementById('conn').value;
     let posturl = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/questions/${id}/comments`;
     let token = window.localStorage.getItem('token');
 
@@ -62,14 +62,12 @@ postComment = () => {
         })
         .then((res) => res.json())
         .then((data) => {
-            if (data.Status === 404) {
-                document.getElementById('output').style.color = 'blue'
-                document.getElementById('output').innerHTML = data.Message
-            }
-            if (data.Status === 201) {
-                document.getElementById('output').style.color = 'green'
-                document.getElementById('output').innerHTML = data.Message
-            }
+            if (data.Status === 404){
+                alert(data.Message)
+                }
+            if (data.Status === 201){
+                alert(data.Message)
+                }
 
         })
 
