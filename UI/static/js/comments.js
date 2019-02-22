@@ -39,7 +39,7 @@
    })
 }
 
-// Post comment
+
 postComment = () => {
     var id = location.search.split('questionid=')[1];
     let comment = document.getElementById('comment').value;
