@@ -37,40 +37,16 @@
                                 </div>
                         </div>
                         <div class="qsn right">
-                            <h2 id="qsn_id"></h2>
-                            <p id="solution"></p>
-                            <p id="body"></p>
-                            <p id="by"></p>
-                            <h4 id="vote"></h4> 
-                            <p id="output"></p>
-                            <table>
-                                <tr>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="upvote">
-                                    <i id="Upvote" class="fa fa-thumbs-up"></i></div>
-                                </td>
-                                <td>
-                                    <div class="downvote">
-                                    <i id="votedown" class="fa fa-thumbs-down"></i></div>
-                                </td>
-                                <td>
-                                    <div class="upvote">
-                                        <div id="icon">
-                                    <i class="fa fa-comment"></i>
-                                            </div>
-                                        </div>
-        
-                                </td>
-                            </tr>
-                        </table>
+                            <div id="output"></div>
+                            <div id="questions"></div>
                                 <hr>
                     <div class="question">
                 <h2>Enter Your Question</h2>
-                    <p><input id="title" placeholder="Enter title"></p>
-                    <textarea id="body" form="comment" name="text" placeholder="Enter your question"></textarea>
-                    <p><input id="post" class="submit" type="submit" name="" value="submit"></p>
+                <form>
+                    <p><input id="title" class="title" type="title" name="" placeholder="Enter title"></p>
+                    <textarea id="body" class="body" type="text" name="" placeholder="Enter your question"></textarea>
+                    <p><input id="post" type="submit" name="" value="Submit"></p>
+                </form>
         </div>
     </div>
 </div>
@@ -82,6 +58,7 @@
           <p><input class="submit" type="submit" name="" value="submit"></p>
         </div>
       </div>
+    </body>
 <div class="footer-bar">
         <div class="container">
             <div class="site-copyright">
@@ -95,5 +72,5 @@
 <script src="static/js/single_meetup.js"></script>
 <script src="static/js/meetups.js"></script>
 <script src="static/js/questions.js"></script>
-</body>
+<script src="static/js/post_question.js"></script>
 </html>
