@@ -40,46 +40,6 @@
 }
 
 // Post comment
-// document.getElementById('post-comment').addEventListener('click', postQuestion)
-
-// function postQuestion(e){
-//     e.preventDefault();
-
-//   var id = location.search.split('questionid=')[1];
-//   console.log(id);
-//   let posturl = `https://my-postgres-questioner-v2-api.herokuapp.com/api/v2/questions/${id}/comments`;
-//   let token = window.localStorage.getItem('token');
-//   let comment = document.getElementById('comment').value;
-
-//   data = {
-//     "comment": comment
-//   }
-//     fetch(posturl, {
-//       method: 'POST',
-//       headers: {
-//           'Accept': 'application/json, text/plain, */*',
-//           'Content-type': 'application/json',
-//           'Authorization': 'Bearer ' + token
-//       },
-//       body: JSON.stringify(data)
-//   })
-//   .then((res) => res.json())
-//   .then((data ) => {
-//     if (data.Status === 201){
-//       document.getElementById('output').style.color = 'blue'
-//       document.getElementById('output').innerHTML = data.Message
-//       return Message
-
-//     } else if (data.Status === 404){
-//       document.getElementById('output').style.color = 'blue'
-//       document.getElementById('output').innerHTML = data.Message
-//       return Message
-//     }
-//   })
-
-
-//   // Signup new user
-
 postComment = () => {
     var id = location.search.split('questionid=')[1];
     let comment = document.getElementById('comment').value;
