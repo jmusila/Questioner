@@ -25,7 +25,6 @@ fetch(meetupsUrl, {
         }
         if (data.status === 200) {
             // if request is successful
-            let meetups = data.meetups; // Get the meetups
             return data.data.forEach(function(meetup) { 
                 lst.innerHTML += `
                 <div class="column">

@@ -47,7 +47,7 @@ function fetchQuestions(){
 
         var userNode = document.createElement('p')
         userNode.id = 'user'
-        userNode.innerHTML = `<i>Posted By:</i> ${question.user_id}`
+        userNode.innerHTML = `<i>Posted By:</i> ${question.username}`
 
         var viewNode = document.createElement('p')
         viewNode.innerHTML = `<b>View Comments</b>`

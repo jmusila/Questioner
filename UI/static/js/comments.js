@@ -29,7 +29,7 @@
                comments.innerHTML += `
                <p><b>Comment: </b>${comm.comment_id}</p>
                <p>${comm.comment}</p>
-               <p><i>Posted By: </i>${comm.user_id}</p>
+               <p><i>Posted By: </i>${comm.username}</p>
                <p><i>TimePosted: </i>${comm.time_added}</p>
            </div>
                `;
